@@ -8,24 +8,43 @@
 
         Console.WriteLine("Informe o numero:");
         numero = double.Parse(Console.ReadLine());
-        controle = numero;
+
 
         if (numero == 0)
         {
-            Console.WriteLine("1");
+            produto = 1;
+
+        }
+        else if (numero != 0 && numero > 0)
+        {
+
+            fatoracao(numero);
         }
 
-        if (numero != 0  && numero > 0)
+
+        double fatoracao(double numero)
         {
-            for(int i = 0; i < controle; i++)
+
+
             {
+
                 produto *= numero;
                 numero--;
 
             }
-            Console.WriteLine("Resultado:");
-            Console.WriteLine(produto);
+            if (numero >= 1)
+            {
+                return fatoracao(numero);
+            }
+
+            return produto;
+
         }
+
+        Console.WriteLine("Resultado:");
+        Console.WriteLine(produto);
+
+
 
     }
 }
